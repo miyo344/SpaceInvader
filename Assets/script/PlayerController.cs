@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject bullet;
     AudioSource BulletSE;
     [SerializeField] GameObject ExplosionEffect;
-
+    [SerializeField] List<GameObject> EnemyList = new List<GameObject>();
     [SerializeField] GameSceneManager mygameManager;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
         BulletSE = GetComponent<AudioSource>();
 
         GetComponent<Renderer>().material.color = Color.red;
+        for (int i = 0; i < EnemyList.Count; i++)
+        {
+            EnemyList[i].SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -65,6 +69,10 @@ public class PlayerController : MonoBehaviour
         explosion.transform.position = this.transform.position;
         mygameManager.AddScoreToText();
         Destroy(this.gameObject); //自分自身のオブジェクトを消去
+        for (int i = 0; i < EnemyList.Count; i++)
+        {
+            EnemyList[i].SetActive(false);
+        }
     }
 
 }

@@ -594,8 +594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57}
-  m_SizeDelta: {x: 80, y: 30}
+  m_AnchoredPosition: {x: 0, y: -230.4}
+  m_SizeDelta: {x: 167, y: 91.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447224006
 MonoBehaviour:
@@ -1152,11 +1152,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 71
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1698,8 +1698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0026855, y: 31}
-  m_SizeDelta: {x: 174.00537, y: 310}
+  m_AnchoredPosition: {x: -1.9, y: 56.6}
+  m_SizeDelta: {x: 1324.5757, y: 1307.313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443254767
 MonoBehaviour:
@@ -1722,11 +1722,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 130
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 100
+    m_MinSize: 3
+    m_MaxSize: 154
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2110,6 +2110,10 @@ MonoBehaviour:
   bullet: {fileID: 1470426015370010373, guid: 2692be0e2f1fd3f488e94d1234c6cf3e, type: 3}
   ExplosionEffect: {fileID: 7403780160504727205, guid: 887bd0efe5805a4488cd261fdfd561ed,
     type: 3}
+  EnemyList:
+  - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
+  - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
+  - {fileID: 7779856260553271100, guid: dd38101eaa39d5140b09ccafd059b2b9, type: 3}
   mygameManager: {fileID: 519420034}
 --- !u!70 &2081726646
 CapsuleCollider2D:
