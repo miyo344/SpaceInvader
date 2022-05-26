@@ -138,4 +138,4 @@ MonoBehaviour:
   bullet: {fileID: 1470426015370010373, guid: 7383b63d7e1aef3488747a99eaec8f6b, type: 3}
   ExplosionEffect: {fileID: 7403780160504727205, guid: 887bd0efe5805a4488cd261fdfd561ed,
     type: 3}
-  score: 5
+  score: 2

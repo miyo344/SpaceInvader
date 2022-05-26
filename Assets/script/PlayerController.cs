@@ -24,7 +24,11 @@ public class PlayerController : MonoBehaviour
         //透明化
         //GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, -0.001f);   
         //マウスに合わせて飛行機が横に移動
-        transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y);
+        //transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y);
+        transform.position = new Vector2(
+            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,-2.6f,2.6f),
+            Mathf.Clamp(transform.position.y,-3.5f,-3.5f)
+            );
     }
     void ShootS()
     {
