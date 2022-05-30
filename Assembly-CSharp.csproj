@@ -89,6 +89,7 @@
     <Compile Include="Assets\script\NormalEnemy.cs" />
     <Compile Include="Assets\script\PlayerController.cs" />
     <Compile Include="Assets\script\SceneLoader.cs" />
+    <Compile Include="Assets\script\Score.cs" />
     <Compile Include="Assets\script\SuperEnemy.cs" />
     <Compile Include="Assets\script\Test.cs" />
     <Reference Include="UnityEngine">
