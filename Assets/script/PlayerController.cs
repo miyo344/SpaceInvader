@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject ExplosionEffect;
     [SerializeField] List<GameObject> EnemyList = new List<GameObject>();
     [SerializeField] GameSceneManager mygameManager;
+    int cnt;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("ShootS", 0f, 1f);
+        cnt = 3;
+        InvokeRepeating("ShootS", 0f, 0.5f);
         BulletSE = GetComponent<AudioSource>();
 
-        GetComponent<Renderer>().material.color = Color.red;
+        //GetComponent<Renderer>().material.color = Color.red;
         for (int i = 0; i < EnemyList.Count; i++)
         {
             EnemyList[i].SetActive(true);
@@ -33,6 +35,19 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,-2.6f,2.6f),
             Mathf.Clamp(transform.position.y,-3.5f,-3.5f)
             );
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(cnt != 0)
+            {
+                var clones = GameObject.FindGameObjectsWithTag("bullet");
+                foreach (var clone in clones)
+                {
+                    Destroy(clone);
+                }
+                cnt--;
+            }
+        }
     }
     void ShootS()
     {

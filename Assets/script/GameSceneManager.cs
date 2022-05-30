@@ -42,8 +42,9 @@ public class GameSceneManager : MonoBehaviour
 
     public void AddScoreToText() //他のスクリプトからアクセスするからpublicで！
     {
-        UIText.text = "Score: " + Score.ToString();  //テキストにスコアを代入
-        //UIText.gameObject.SetActive(true);  //テキストをアクティブにする
+        //UIText.text = "Score: " + Score.ToString();  //テキストにスコアを代入
+        UIText.text = "Game Over";
+        UIText.gameObject.SetActive(true);  //テキストをアクティブにする
         UIButton.gameObject.SetActive(true);
     }
 }
