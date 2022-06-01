@@ -10,9 +10,13 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] List<GameObject> EnemyPortList = new List<GameObject>();
     int timer = 3; //タイマーです。初期値は3
     public static int Score = 0;
+    int cnt;
+    bool judge;
 
     void Start()
     {
+        cnt = 3;
+        judge = false;
         Score = 0;
         Invoke("DecreaseTimer", 1); // 3 -> 2 に変更 
         Invoke("DecreaseTimer", 2); //2 -> 1 に変更
@@ -38,6 +42,26 @@ public class GameSceneManager : MonoBehaviour
     void DeactiveText()
     {
         UIText.gameObject.SetActive(false);
+        judge = true;
+    }
+
+    void Update()
+    {
+        if (judge)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (cnt != 0)
+                {
+                    var clones = GameObject.FindGameObjectsWithTag("bullet");
+                    foreach (var clone in clones)
+                    {
+                        Destroy(clone);
+                    }
+                    cnt--;
+                }
+            }
+        }
     }
 
     public void AddScoreToText() //他のスクリプトからアクセスするからpublicで！
