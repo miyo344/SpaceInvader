@@ -14,7 +14,7 @@ public class EnemyPort : MonoBehaviour
 
     void SetNextEnemy()
     {
-        float interval = Random.Range(1f, 5f);
+        float interval = Random.Range(3f, 5f);
         Invoke("GenerateEnemy", interval);
     }
 
@@ -24,6 +24,12 @@ public class EnemyPort : MonoBehaviour
         int enemyindex = Random.Range(0, EnemyList.Count);
         GameObject enemy = Instantiate(EnemyList[enemyindex]);
         enemy.transform.position = this.transform.position;
+
+        float x = Random.Range(-2.0f, 2.0f);
+        Vector2 pos = enemy.transform.position;
+        pos.x += x;
+        enemy.transform.position = pos;
+
         //生成した敵の位置を、このEnemyPortの位置に調整
         SetNextEnemy();
     }
