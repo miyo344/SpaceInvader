@@ -25,7 +25,7 @@ public class EnemyPort : MonoBehaviour
         GameObject enemy = Instantiate(EnemyList[enemyindex]);
         enemy.transform.position = this.transform.position;
 
-        float x = Random.Range(-2.0f, 2.0f);
+        float x = Random.Range(-2.4f, 2.4f);
         Vector2 pos = enemy.transform.position;
         pos.x += x;
         enemy.transform.position = pos;
