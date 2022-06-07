@@ -4,12 +4,36 @@ using UnityEngine;
 
 public class EnemyPort : MonoBehaviour
 {
-    [SerializeField] GameObject Enemy;
+    //[SerializeField] GameObject Enemy;
     [SerializeField] List<GameObject> EnemyList = new List<GameObject>();
+    private Camera _mainCamera;
     // Start is called before the first frame update
     void Start()
     {
         SetNextEnemy();
+        GameObject obj = GameObject.Find("Main Camera");
+        _mainCamera = obj.GetComponent<Camera>();
+
+        //Debug.Log(getScreenTopLeft().x + ", " + getScreenTopLeft().y);
+        //Debug.Log(getScreenBottomRight().x + ":" + getScreenBottomRight().y);
+    }
+
+    private Vector3 getScreenTopLeft()
+    {
+        // 画面の左上を取得
+        Vector3 topLeft = _mainCamera.ScreenToWorldPoint(Vector3.zero);
+        // 上下反転させる
+        topLeft.Scale(new Vector3(1f, -1f, 1f));
+        return topLeft;
+    }
+
+    private Vector3 getScreenBottomRight()
+    {
+        // 画面の右下を取得
+        Vector3 bottomRight = _mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0.0f));
+        // 上下反転させる
+        bottomRight.Scale(new Vector3(1f, -1f, 1f));
+        return bottomRight;
     }
 
     void SetNextEnemy()
@@ -21,12 +45,10 @@ public class EnemyPort : MonoBehaviour
     //敵を生成する関数
     void GenerateEnemy()
     {
+        float x = Random.Range(getScreenTopLeft().x, getScreenBottomRight().x);
         int enemyindex = Random.Range(0, EnemyList.Count);
         GameObject enemy = Instantiate(EnemyList[enemyindex]);
-        enemy.transform.position = this.transform.position;
-
-        float x = Random.Range(-2.4f, 2.4f);
-        Vector2 pos = enemy.transform.position;
+        Vector2 pos = this.transform.position;
         pos.x += x;
         enemy.transform.position = pos;
 

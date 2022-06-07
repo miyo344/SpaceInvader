@@ -23,7 +23,7 @@ public class Test : MonoBehaviour
         {
             if(mylist[i] > 25)
             {
-                Debug.Log(mylist[i]);
+                //Debug.Log(mylist[i]);
             }
         }
         

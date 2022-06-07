@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NormalEnemy : MonoBehaviour
 {
+    [SerializeField] GameSceneManager mygameManager;
     [SerializeField] float ActiveTime = 5f;
     [SerializeField] public float speed;
     [SerializeField] GameObject bullet;
@@ -41,6 +42,7 @@ public class NormalEnemy : MonoBehaviour
         GameSceneManager.Score += score;
         Destroy(this.gameObject); //自分自身のオブジェクトを消去
     }
+
     void ShootS()
     {
         GameObject b = Instantiate(bullet); //bulletを生成し、それを"b"という変数に代入

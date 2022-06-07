@@ -5,7 +5,7 @@ using UnityEngine.UI; //これがないとUI系の実装はできません
 
 public class GameSceneManager : MonoBehaviour
 {
-    [SerializeField] Text UIText;
+    [SerializeField] Text UIText,UIItem;
     [SerializeField] Button UIButton;
     [SerializeField] List<GameObject> EnemyPortList = new List<GameObject>();
     int timer = 3; //タイマーです。初期値は3
@@ -59,6 +59,7 @@ public class GameSceneManager : MonoBehaviour
                         Destroy(clone);
                     }
                     cnt--;
+                    UIItem.text = "Item: " + cnt;
                 }
             }
         }
